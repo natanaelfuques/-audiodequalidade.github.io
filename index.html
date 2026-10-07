@@ -8,34 +8,38 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%230B0C10'/%3E%3Cpath d='M3 12h3l2-6 3 12 3-9 2 3h5' stroke='%23D4A857' stroke-width='2' fill='none'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#0B0C10; --bg-soft:#13151C; --ink:#F2EFE9; --ink-dim:#B9B6B0;
-    --violet:#7B4FE0; --magenta:#C04FC9; --gold:#D4A857; --line:#2A2C34;
+    --violet:#7B4FE0; --gold:#D4A857; --line:#2A2C34;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
   body{
     background:var(--bg); color:var(--ink);
-    font-family:'Manrope', sans-serif; font-weight:400;
+    font-family:'Space Grotesk', sans-serif; font-weight:400;
     line-height:1.6; -webkit-font-smoothing:antialiased;
   }
-  h1,h2,h3{font-family:'Cormorant Garamond', serif; font-weight:600; line-height:1.1; letter-spacing:.2px;}
+  h1,h2,h3{
+    font-family:'Anton', sans-serif; font-weight:400; line-height:0.98;
+    text-transform:uppercase; letter-spacing:.5px;
+  }
   img{max-width:100%; display:block;}
   a{color:inherit;}
   .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
-  section{padding:88px 0;}
-  @media(max-width:720px){section{padding:56px 0;}}
+  section{padding:80px 0;}
+  @media(max-width:720px){section{padding:52px 0;}}
+  .topbar{height:4px; background:linear-gradient(90deg, var(--violet), var(--gold), var(--violet));}
 
   /* header */
   header{
     position:sticky; top:0; z-index:10;
-    background:rgba(11,12,16,.88); backdrop-filter:blur(8px);
+    background:rgba(11,12,16,.9); backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
   }
-  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 28px; max-width:1180px; margin:0 auto;}
-  .brand{font-family:'Cormorant Garamond', serif; font-size:22px; font-weight:600; letter-spacing:.3px;}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 28px; max-width:1180px; margin:0 auto;}
+  .brand{display:flex; align-items:center; gap:10px; font-family:'Anton', sans-serif; font-size:19px; text-transform:uppercase; letter-spacing:.6px;}
   .btn{
     display:inline-flex; align-items:center; gap:8px;
     background:var(--gold); color:#1A1206; font-weight:700;
@@ -44,14 +48,18 @@
   }
   .btn-outline{background:transparent; border:1px solid var(--gold); color:var(--gold);}
 
+  /* pills */
+  .pills{display:flex; gap:10px; flex-wrap:wrap; margin-top:26px;}
+  .pill{border:1px solid var(--violet); color:var(--ink-dim); font-size:13px; padding:7px 16px; border-radius:999px;}
+  .pill:nth-child(2n){border-color:var(--gold);}
+
   /* hero */
   .hero{padding:0;}
   .hero-grid{display:grid; grid-template-columns:1fr 1fr; min-height:72vh;}
   .hero-copy{display:flex; flex-direction:column; justify-content:center; padding:64px 56px 64px 28px;}
-  .hero-copy h1{font-size:clamp(34px,4.6vw,58px); max-width:14ch;}
+  .hero-copy h1{font-size:clamp(36px,5.2vw,62px); max-width:13ch;}
   .hero-copy p{color:var(--ink-dim); font-size:18px; max-width:46ch; margin-top:22px;}
-  .hero-stat{margin-top:28px; font-size:16px; color:var(--ink-dim); border-left:2px solid var(--gold); padding-left:14px;}
-  .hero-actions{margin-top:34px; display:flex; gap:14px; flex-wrap:wrap;}
+  .hero-actions{margin-top:30px; display:flex; gap:14px; flex-wrap:wrap;}
   .hero-photo{position:relative; overflow:hidden; min-height:420px;}
   .hero-photo img{width:100%; height:100%; object-fit:cover; position:absolute; inset:0;}
   @media(max-width:860px){
@@ -60,61 +68,88 @@
     .hero-photo{min-height:320px;}
   }
 
+  /* stats */
+  .stats{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .stats-grid{display:grid; grid-template-columns:repeat(3,1fr); text-align:center;}
+  .stats-grid div{padding:30px 10px; border-left:1px solid var(--line);}
+  .stats-grid div:first-child{border-left:none;}
+  .stat-num{font-family:'Anton', sans-serif; font-size:clamp(30px,4vw,44px); color:var(--gold);}
+  .stat-label{color:var(--ink-dim); font-size:14px; margin-top:4px;}
+
   /* about */
-  .about-grid{display:grid; grid-template-columns:1.1fr 1fr; gap:64px; align-items:start;}
+  .about-grid{display:grid; grid-template-columns:1fr 1.1fr; gap:56px; align-items:center;}
   .about h2{font-size:clamp(28px,3vw,38px); max-width:16ch;}
   .about p{color:var(--ink-dim); margin-top:18px; max-width:52ch; font-size:17px;}
-  .tags{display:flex; gap:10px; flex-wrap:wrap; margin-top:24px;}
-  .tag{border:1px solid var(--line); color:var(--ink-dim); font-size:13px; padding:7px 14px; border-radius:3px;}
-  .about-photo img{border-radius:2px;}
-  @media(max-width:860px){.about-grid{grid-template-columns:1fr; gap:28px;}}
+  .about-photo img{border-radius:2px; aspect-ratio:4/5; object-fit:cover;}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr; gap:28px;} .about-photo{order:-1; max-width:320px;}}
 
   /* services */
-  .services h2{font-size:clamp(28px,3vw,38px); margin-bottom:36px;}
+  .services h2{font-size:clamp(28px,3vw,38px); margin-bottom:10px;}
+  .services .eyebrow{color:var(--ink-dim); font-size:15px; margin-bottom:34px;}
   .svc-list{border-top:1px solid var(--line);}
   .svc-row{
-    display:grid; grid-template-columns:220px 1fr; gap:24px;
-    padding:22px 0; border-bottom:1px solid var(--line);
+    display:flex; align-items:center; gap:22px;
+    padding:18px 0; border-bottom:1px solid var(--line); border-left:3px solid var(--violet);
+    padding-left:18px;
   }
-  .svc-row h3{font-size:22px; color:var(--gold); font-weight:600;}
-  .svc-row p{color:var(--ink-dim); font-size:16px; max-width:56ch;}
-  @media(max-width:720px){.svc-row{grid-template-columns:1fr; gap:6px;}}
+  .svc-row:nth-child(2n){border-left-color:var(--gold);}
+  .svc-row img{width:96px; height:72px; object-fit:cover; border-radius:2px; flex:none;}
+  .svc-row h3{font-size:21px; color:var(--gold); font-weight:600;}
+  .svc-row:nth-child(2n) h3{color:var(--ink);}
+  .svc-row p{color:var(--ink-dim); font-size:15px; max-width:56ch; margin-top:4px;}
+  @media(max-width:600px){.svc-row img{width:72px; height:56px;}}
 
   /* portfolio */
   .portfolio h2{font-size:clamp(28px,3vw,38px); margin-bottom:36px;}
-  .pf-grid{display:grid; grid-template-columns:1fr 1fr; gap:4px;}
+  .pf-hero{position:relative; overflow:hidden; border-radius:2px; margin-bottom:4px;}
+  .pf-hero img{width:100%; max-height:520px; object-fit:cover;}
+  .pf-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:4px;}
   .pf-item{position:relative; overflow:hidden; aspect-ratio:4/3;}
-  .pf-item img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
-  .pf-item:hover img{transform:scale(1.04);}
+  .pf-item img{width:100%; height:100%; object-fit:cover;}
   .pf-cap{
-    position:absolute; left:0; bottom:0; right:0; padding:16px 18px;
-    background:linear-gradient(0deg, rgba(0,0,0,.75), transparent);
-    font-size:15px; color:#fff; font-weight:600;
+    position:absolute; left:0; bottom:0; right:0; padding:14px 16px;
+    background:linear-gradient(0deg, rgba(0,0,0,.8), transparent);
+    font-size:14px; color:#fff; font-weight:600;
   }
-  @media(max-width:600px){.pf-grid{grid-template-columns:1fr;}}
+  @media(max-width:720px){.pf-grid{grid-template-columns:1fr 1fr;}}
 
   /* testimonials */
   .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px;}
   .testi{border-left:2px solid var(--violet); padding-left:20px;}
+  .testi:nth-child(2n){border-left-color:var(--gold);}
   .testi p{color:var(--ink-dim); font-size:16px; font-style:italic;}
   .testi span{display:block; margin-top:14px; font-size:14px; color:var(--gold);}
   @media(max-width:860px){.testi-grid{grid-template-columns:1fr; gap:28px;}}
 
-  /* cta / footer */
+  /* cta */
   .cta{background:var(--bg-soft); text-align:center;}
   .cta h2{font-size:clamp(28px,4vw,44px); max-width:18ch; margin:0 auto;}
   .cta p{color:var(--ink-dim); margin-top:16px;}
   .cta .hero-actions{justify-content:center; margin-top:30px;}
-  footer{border-top:1px solid var(--line); padding:40px 0; font-size:14px; color:var(--ink-dim);}
-  .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px;}
-  .foot-grid a{text-decoration:none; color:var(--ink);}
+
+  /* footer */
+  .frota{overflow:hidden; border-top:1px solid var(--line);}
+  .frota img{width:100%; max-height:360px; object-fit:cover; filter:grayscale(.2);}
+  .foot-stats{background:var(--bg-soft); border-bottom:1px solid var(--line);}
+  .foot-stats .stats-grid div{border-left:1px solid var(--line);}
+  .foot-stats .stat-num{font-size:22px;}
+  .contact-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:40px;}
+  .contact-grid a{background:var(--bg); padding:24px 18px; text-align:center; text-decoration:none;}
+  .contact-grid .label{color:var(--ink-dim); font-size:12px; text-transform:uppercase; letter-spacing:1px;}
+  .contact-grid .value{color:var(--gold); font-weight:600; margin-top:6px; font-size:15px;}
+  @media(max-width:720px){.contact-grid{grid-template-columns:1fr 1fr;}}
+  footer{padding:36px 0; font-size:14px; color:var(--ink-dim); text-align:center;}
 </style>
 </head>
 <body>
+<div class="topbar"></div>
 
 <header>
   <div class="nav">
-    <div class="brand">Áudio de Qualidade</div>
+    <div class="brand">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4A857" stroke-width="1.6"><circle cx="12" cy="12" r="10.2"/><path d="M4 12h3l2-5 3 10 3-8 2 3h3"/></svg>
+      Áudio de Qualidade
+    </div>
     <a class="btn" href="https://wa.me/5547991536771" target="_blank" rel="noopener">Chamar no WhatsApp</a>
   </div>
 </header>
@@ -124,31 +159,43 @@
     <div class="hero-copy">
       <h1>Da abertura ao último brinde, cuidamos do som e da luz do seu evento.</h1>
       <p>Sonorização, iluminação e tecnologia para casamentos, aniversários, formaturas e eventos corporativos em Brusque e região.</p>
-      <div class="hero-stat">Desde 2016, já realizamos mais de 1.500 eventos.</div>
+      <div class="pills">
+        <span class="pill">Corporativo</span>
+        <span class="pill">Casamentos</span>
+        <span class="pill">15 Anos</span>
+        <span class="pill">Formaturas</span>
+        <span class="pill">Shows</span>
+      </div>
       <div class="hero-actions">
         <a class="btn" href="https://wa.me/5547991536771" target="_blank" rel="noopener">Chamar no WhatsApp</a>
         <a class="btn btn-outline" href="#portfolio">Ver eventos realizados</a>
       </div>
     </div>
     <div class="hero-photo">
-      <img src="images/hero.jpg" alt="Estrutura de som e iluminação da Áudio de Qualidade montada em evento">
+      <img src="images/hero.jpg" alt="Casal de noivos saindo da cerimônia com estrutura Áudio de Qualidade">
     </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div><div class="stat-num">9</div><div class="stat-label">Serviços</div></div>
+    <div><div class="stat-num">1500+</div><div class="stat-label">Eventos</div></div>
+    <div><div class="stat-num">100%</div><div class="stat-label">Dedicação</div></div>
   </div>
 </section>
 
 <section class="about">
   <div class="wrap about-grid">
+    <div class="about-photo"><img src="images/about.jpg" alt="Natanael e Kariélen, da Áudio de Qualidade"></div>
     <div>
       <h2>Experiência que transforma</h2>
       <p>Eu, Natanael, e minha esposa, Kariélen, somos especializados em eventos de pequeno e médio porte, onde cada detalhe recebe atenção personalizada. Proximidade com o cliente e qualidade de execução fazem toda a diferença.</p>
-      <div class="tags">
-        <span class="tag">Equipamento Premium</span>
-        <span class="tag">Equipe Especializada</span>
-        <span class="tag">Atendimento Completo</span>
+      <div class="pills">
+        <span class="pill">Equipamento Premium</span>
+        <span class="pill">Equipe Especializada</span>
+        <span class="pill">Atendimento Completo</span>
       </div>
-    </div>
-    <div class="about-photo">
-      <img src="images/romantico.jpg" alt="Decoração e iluminação de casamento Áudio de Qualidade">
     </div>
   </div>
 </section>
@@ -156,16 +203,17 @@
 <section class="services">
   <div class="wrap">
     <h2>Nossos serviços</h2>
+    <div class="eyebrow">Quem somos e o que oferecemos para o seu evento</div>
     <div class="svc-list">
-      <div class="svc-row"><h3>Sonorização</h3><p>Som profissional de alta qualidade para qualquer tamanho de evento.</p></div>
-      <div class="svc-row"><h3>Iluminação</h3><p>Luz cênica para criar a atmosfera perfeita, do jantar à pista de dança.</p></div>
-      <div class="svc-row"><h3>Pista de LED</h3><p>Pista espelhada iluminada, requinte e exclusividade para a festa.</p></div>
-      <div class="svc-row"><h3>Túnel de LED</h3><p>Entrada impactante para noivos e debutantes.</p></div>
-      <div class="svc-row"><h3>Painel de LED</h3><p>Painéis de alta resolução para cenários e conteúdo personalizado.</p></div>
-      <div class="svc-row"><h3>TVs &amp; Projetores</h3><p>Telas e projetores para apresentações visuais e vídeos.</p></div>
-      <div class="svc-row"><h3>Fogos Indoor</h3><p>Fogo frio e seguro para ambientes fechados.</p></div>
-      <div class="svc-row"><h3>Plataforma 360</h3><p>Plataforma giratória para vídeos virais dos convidados.</p></div>
-      <div class="svc-row"><h3>Totem de Carga</h3><p>Ninguém fica sem bateria no celular durante o evento.</p></div>
+      <div class="svc-row"><img src="images/svc-sonorizacao.jpg" alt="Sonorização"><div><h3>Sonorização</h3><p>Som profissional de alta qualidade para qualquer tamanho de evento.</p></div></div>
+      <div class="svc-row"><img src="images/svc-iluminacao.jpg" alt="Iluminação"><div><h3>Iluminação</h3><p>Luz cênica para criar a atmosfera perfeita, do jantar à pista de dança.</p></div></div>
+      <div class="svc-row"><img src="images/svc-pistaled.jpg" alt="Pista de LED"><div><h3>Pista de LED</h3><p>Pista espelhada iluminada, requinte e exclusividade para a festa.</p></div></div>
+      <div class="svc-row"><img src="images/svc-tunelled.jpg" alt="Túnel de LED"><div><h3>Túnel de LED</h3><p>Entrada impactante para noivos e debutantes.</p></div></div>
+      <div class="svc-row"><img src="images/svc-painelled.jpg" alt="Painel de LED"><div><h3>Painel de LED</h3><p>Painéis de alta resolução para cenários e conteúdo personalizado.</p></div></div>
+      <div class="svc-row"><img src="images/svc-tvprojetor.jpg" alt="TVs e Projetores"><div><h3>TVs &amp; Projetores</h3><p>Telas e projetores para apresentações visuais e vídeos.</p></div></div>
+      <div class="svc-row"><img src="images/svc-fogos.jpg" alt="Fogos Indoor"><div><h3>Fogos Indoor</h3><p>Fogo frio e seguro para ambientes fechados.</p></div></div>
+      <div class="svc-row"><div style="width:96px;flex:none"></div><div><h3>Plataforma 360</h3><p>Plataforma giratória para vídeos virais dos convidados.</p></div></div>
+      <div class="svc-row"><img src="images/svc-totem.jpg" alt="Totem de Carga"><div><h3>Totem de Carga</h3><p>Ninguém fica sem bateria no celular durante o evento.</p></div></div>
     </div>
   </div>
 </section>
@@ -173,11 +221,12 @@
 <section class="portfolio" id="portfolio">
   <div class="wrap">
     <h2>Eventos que já realizamos</h2>
+    <div class="pf-hero"><img src="images/pf-casamento.jpg" alt="Casamento com sonorização e pista de LED Áudio de Qualidade"><div class="pf-cap">Casamento</div></div>
     <div class="pf-grid">
-      <div class="pf-item"><img src="images/casamento.jpg" alt="Casamento com sonorização e telão Áudio de Qualidade"><div class="pf-cap">Casamento</div></div>
-      <div class="pf-item"><img src="images/corporativo.jpg" alt="Painel de LED em evento corporativo e shows"><div class="pf-cap">Corporativo &amp; Shows</div></div>
-      <div class="pf-item"><img src="images/15anos.jpg" alt="Festa de 15 anos com pista de LED espelhada"><div class="pf-cap">15 Anos</div></div>
+      <div class="pf-item"><img src="images/pf-corporativo.jpg" alt="Evento corporativo com iluminação cênica"><div class="pf-cap">Corporativo</div></div>
       <div class="pf-item"><img src="images/aniversario.jpg" alt="Decoração de aniversário com painel personalizado"><div class="pf-cap">Aniversário</div></div>
+      <div class="pf-item"><img src="images/pf-cerimonia.jpg" alt="Cerimônia de casamento com sonorização Áudio de Qualidade"><div class="pf-cap">Cerimônia</div></div>
+      <div class="pf-item"><img src="images/pf-formatura.jpg" alt="Banda ao vivo em formatura"><div class="pf-cap">Formatura</div></div>
     </div>
   </div>
 </section>
@@ -209,16 +258,29 @@
   </div>
 </section>
 
-<footer>
-  <div class="wrap foot-grid">
-    <div>Áudio de Qualidade — Brusque, SC — desde 2016</div>
-    <div>
-      <a href="https://wa.me/5547991536771" target="_blank" rel="noopener">WhatsApp</a> &nbsp;·&nbsp;
-      <a href="https://instagram.com/audiodequalidade" target="_blank" rel="noopener">Instagram</a> &nbsp;·&nbsp;
-      <a href="mailto:audiodequalidadebox@gmail.com">E-mail</a>
+<div class="frota"><img src="images/frota.jpg" alt="Frota de veículos Áudio de Qualidade"></div>
+
+<section class="foot-stats">
+  <div class="wrap stats-grid">
+    <div><div class="stat-num">Desde 2016</div><div class="stat-label">Fundação da Empresa</div></div>
+    <div><div class="stat-num">Brusque/SC</div><div class="stat-label">Sede Atual</div></div>
+    <div><div class="stat-num">Equipe Própria</div><div class="stat-label">Profissionais Dedicados</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 style="text-align:center; font-size:clamp(24px,3vw,32px);">Vamos tornar seu evento inesquecível?</h2>
+    <div class="contact-grid">
+      <a href="https://wa.me/5547991536771" target="_blank" rel="noopener"><div class="label">WhatsApp</div><div class="value">(47) 99153-6771</div></a>
+      <a href="https://instagram.com/audiodequalidade" target="_blank" rel="noopener"><div class="label">Instagram</div><div class="value">@audiodequalidade</div></a>
+      <a href="https://facebook.com/audiodequalidade" target="_blank" rel="noopener"><div class="label">Facebook</div><div class="value">Acesse Agora</div></a>
+      <a href="mailto:audiodequalidadebox@gmail.com"><div class="label">E-mail</div><div class="value">Envie Mensagem</div></a>
     </div>
   </div>
-</footer>
+</section>
+
+<footer>Áudio de Qualidade — Brusque, SC — desde 2016</footer>
 
 </body>
 </html>
