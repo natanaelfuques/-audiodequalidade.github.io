@@ -41,7 +41,7 @@
   section{padding:80px 0;}
   @media(max-width:720px){section{padding:52px 0;}}
   .topbar{height:4px; background:linear-gradient(90deg, var(--violet), var(--gold), var(--violet));}
-  .shell{max-width:1680px; margin:0 auto; box-shadow:0 0 80px rgba(0,0,0,.4);}
+  .shell{max-width:1680px; margin:0 auto; box-shadow:0 0 80px rgba(0,0,0,.4); overflow-x:clip;}
   a, .btn, .pill, .svc-row, .pf-item img, .pf-hero img, .contact-grid a{transition:all .25s ease;}
 
   /* header */
@@ -223,7 +223,12 @@
   .contact-grid .label{color:var(--ink-dim); font-size:12px; text-transform:uppercase; letter-spacing:1px;}
   .contact-grid .value{color:var(--gold); font-weight:600; margin-top:6px; font-size:15px;}
   .contact-grid a:hover{background:rgba(255,255,255,.04); transform:translateY(-3px);}
-  @media(max-width:720px){.contact-grid{grid-template-columns:1fr 1fr;}}
+  .contact-grid a{min-width:0;}
+  @media(max-width:720px){
+    .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .contact-grid a{padding:22px 10px;}
+    .contact-grid .value{font-size:14px; overflow-wrap:anywhere;}
+  }
   footer{padding:36px 0; font-size:14px; color:var(--ink-dim); text-align:center;}
 </style>
 </head>
