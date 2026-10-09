@@ -135,6 +135,15 @@
   .nav-links a:hover::after{width:100%;}
   #servicos, #jornada, #portfolio{scroll-margin-top:72px;}
   @media(max-width:860px){.nav-links{display:none;}}
+  .brand{white-space:nowrap;}
+  .brand svg{flex:none;}
+  @media(max-width:520px){
+    .nav{padding:12px 16px;}
+    .brand-text{display:none;}
+    .brand svg{width:32px; height:32px;}
+    .nav .btn{padding:11px 18px; font-size:14px;}
+  }
+  @media(max-width:340px){.btn-long{display:none;}}
 
   /* jornada */
   .jornada h2{font-size:clamp(36px,3.8vw,48px);}
@@ -226,14 +235,14 @@
   <div class="nav">
     <div class="brand">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4A857" stroke-width="1.6"><circle cx="12" cy="12" r="10.2"/><path d="M4 12h3l2-5 3 10 3-8 2 3h3"/></svg>
-      Áudio de Qualidade
+      <span class="brand-text">Áudio de Qualidade</span>
     </div>
     <nav class="nav-links">
       <a href="#servicos">Serviços</a>
       <a href="#jornada">Jornada</a>
       <a href="#portfolio">Eventos</a>
     </nav>
-    <a class="btn" href="https://wa.me/5547991536771" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    <a class="btn" href="https://wa.me/5547991536771" target="_blank" rel="noopener"><span class="btn-long">Chamar no </span>WhatsApp</a>
   </div>
 </header>
 
@@ -384,7 +393,7 @@
 
 <section>
   <div class="wrap">
-    <h2 style="text-align:center; font-size:clamp(32px,3.8vw,42px);">Siga nas redes sociais e acompanhe nosso trabalho!</h2>
+    <h2 style="text-align:center; font-size:clamp(32px,3.8vw,42px);">Siga nas redes sociais e acompanhe nosso trabalho</h2>
     <div class="contact-grid">
       <a href="https://wa.me/5547991536771" target="_blank" rel="noopener"><div class="label">WhatsApp</div><div class="value">(47) 99153-6771</div></a>
       <a href="https://instagram.com/audiodequalidade" target="_blank" rel="noopener"><div class="label">Instagram</div><div class="value">@audiodequalidade</div></a>
