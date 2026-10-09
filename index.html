@@ -75,7 +75,7 @@
   .hero-copy p{color:var(--ink-dim); font-size:18px; max-width:46ch; margin-top:22px;}
   .hero-actions{margin-top:30px; display:flex; gap:14px; flex-wrap:wrap;}
   .hero-photo{position:relative; overflow:hidden; min-height:420px;}
-  .hero-photo img{width:100%; height:100%; object-fit:cover; position:absolute; inset:10;}
+  .hero-photo img{width:100%; height:100%; object-fit:cover; position:absolute; inset:0;}
   @media(max-width:860px){
     .hero-grid{grid-template-columns:1fr;}
     .hero-copy{padding:48px 24px 36px;}
@@ -173,10 +173,11 @@
   /* portfolio */
   .portfolio h2{font-size:clamp(36px,3.8vw,48px); margin-bottom:36px;}
   .pf-hero{position:relative; overflow:hidden; border-radius:2px; margin-bottom:4px;}
-  .pf-hero img{width:100%; max-height:520px; object-fit:cover; object-position:center 0%;}
+  .pf-hero img{width:100%; max-height:520px; object-fit:cover; object-position:center 15%;}
   .pf-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:4px;}
   .pf-item{position:relative; overflow:hidden; aspect-ratio:4/3;}
   .pf-item img{width:100%; height:100%; object-fit:cover;}
+  .pf-item img.pos-aniversario{object-position:center 25%;}
   .pf-item:hover img, .pf-hero:hover img{transform:scale(1.05);}
   .pf-cap{
     position:absolute; left:0; bottom:0; right:0; padding:14px 16px;
@@ -337,7 +338,7 @@
     <div class="pf-hero"><img src="images/pf-casamento.jpg" alt="Casamento com sonorização e pista de LED Áudio de Qualidade"><div class="pf-cap">Casamento</div></div>
     <div class="pf-grid">
       <div class="pf-item"><img src="images/pf-corporativo.jpg" alt="Evento corporativo com iluminação cênica"><div class="pf-cap">Corporativo</div></div>
-      <div class="pf-item"><img src="images/aniversario.jpg" alt="Decoração de aniversário com painel personalizado"><div class="pf-cap">Aniversário</div></div>
+      <div class="pf-item"><img class="pos-aniversario" src="images/aniversario.jpg" alt="Decoração de aniversário com painel personalizado"><div class="pf-cap">Aniversário</div></div>
       <div class="pf-item"><img src="images/pf-cerimonia.jpg" alt="Cerimônia de casamento com sonorização Áudio de Qualidade"><div class="pf-cap">Cerimônia</div></div>
       <div class="pf-item"><img src="images/pf-formatura.jpg" alt="Banda ao vivo em formatura"><div class="pf-cap">Formatura</div></div>
     </div>
